@@ -1,0 +1,12 @@
+COMPILER = gcc
+EXES = search
+all: ${EXES}
+
+search: search-kavya.c
+	${COMPILER} -o search search-kavya.c
+
+%.o: %.c %.h  makefile
+	${COMPILER} $< -c 
+
+clean:
+	rm -f *.o *~ ${EXES} ${CFILES}
